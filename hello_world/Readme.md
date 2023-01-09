@@ -1,5 +1,4 @@
-# docker-examples
-This repo is for running docker examples for Lagrange Dao project.
+.
 ## Get Started
 If you want to run a "hello world" docker project, please follow the steps below
 
