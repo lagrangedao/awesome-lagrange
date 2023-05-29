@@ -1,25 +1,8 @@
-# docker-examples
-This repo is for running docker examples for Lagrange Dao project.
-## Get Started
-If you want to run a "hello world" docker project, please follow the steps below
+# Awesome Lagrange
 
-## Build  Image
-###
-```shell
-cd hello_world
-docker build -t lad_hello_world .
-```
+Awesome Lagrange is a curated list of awesome resource people can use to familiarize themselves with Lagrange and includes
+examples of several applications they can deploy on the platform. Please submit a pull request if you know any resources
+that might be helpful to other developers.
 
-## Start a instance
+hello_world
 
-```shell
- docker run lad_hello_world
-```
-
-Open the web page at http://0.0.0.0:7860, if success you can the following response 
-
-```json
-{
-    "Hello": "World!"
-}
-```
