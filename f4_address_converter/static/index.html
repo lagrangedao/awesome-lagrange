@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>F4 to FEVM Converter</title>
+    <script>
+        function convertAddress() {
+            var f4Address = document.getElementById("f4Address").value;
+
+            // Make a GET request to the FastAPI endpoint
+            fetch("/convert_address_f4_0X?f4Address=" + f4Address)
+                    .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        document.getElementById("fevmAddress").innerHTML = "Error: " + data.error;
+                    } else {
+                        document.getElementById("fevmAddress").innerHTML = "FEVM Address: " + data["fevm_address"];
+                    }
+                })
+                .catch(error => {
+                    document.getElementById("fevmAddress").innerHTML = "Error: " + error;
+                });
+        }
+    </script>
+</head>
+<body>
+<h1>F4 to FEVM Converter</h1>
+<label for="f4Address">Enter F4 Address:</label>
+<input type="text" id="f4Address" name="f4Address">
+<button onclick="convertAddress()">Convert</button>
+<br>
+<div id="fevmAddress"></div>
+</body>
+</html>
