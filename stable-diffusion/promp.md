@@ -22,3 +22,7 @@ Negative prompt:
 nartfixer| nfixer
 
 ![00001-3337194799](https://github.com/lagrangedao/awesome-lagrange/assets/8363795/9a2b2016-b6cb-45b8-96cf-767f090c2dea)
+
+ an otherworldly machine that is similar in nature to a large robotic raptor, UHD, raytracing, godrays, (technical drawing:1. 1), schematic
+
+Negative prompt: lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, worst quality, cropped, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, artist name, deformed, missing limb, poorly drawn hands, floating limbs, malformed hands, out of frame, malformed eyes, bad lighting, cloned face, fused fingers, gross proportions, long neck, mutilated, mutated hands, warped face, tiling, two mouths connected, two heads connected, floating weapons, floating limbs
