@@ -20,3 +20,4 @@ Negative prompt:
 
  Negative prompt:
 nartfixer| nfixer
+![00001-3337194799](https://github.com/lagrangedao/awesome-lagrange/assets/8363795/9a2b2016-b6cb-45b8-96cf-767f090c2dea)
