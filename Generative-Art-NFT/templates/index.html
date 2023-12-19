@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DataNFT Generator</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Exo', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.warning {
+    background-color: #FFCCCB; /* Light red background */
+    color: black;
+    margin: 10px 0;
+    padding: 15px;
+    border-left: 5px solid red; /* Red left border */
+    font-family: Arial, sans-serif;
+}
+
+.warning-icon {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.context {
+    width: 100%;
+    position: absolute;
+    top:20%;
+    
+}
+form{ display: table; 
+      text-align: left;
+      
+    }
+label { display: table-row; text-align: left;align-items: flex;}
+
+.context h3{
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+}
+
+
+.area{
+    background: #4e54c8;  
+    background: -webkit-linear-gradient(to left, #aa089f, #4e54c8);  
+    width: 100%;
+    height:100vh;
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+.area .container {
+    width: 80%;
+    max-width: 600px;
+}
+.area .loader {
+    border: 5px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+#main {
+    display: flex;
+    align-items: center; /* Vertical align the elements to the center */
+    }
+#cleanButton{
+    margin-left: 10px;
+}
+.area .button {
+    z-index: 1; 
+    background-color: #EFE2C2;
+    font-family: 'Exo', sans-serif;
+    border: none;
+    border-radius: 5px; 
+    color: grey;
+    padding: 12px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 2px;
+    cursor: pointer;
+    }
+    .area .button:hover {
+    background-color: #DDC27E;
+    border: none;
+    color: white;
+    transition: 0.06s;
+    }
+    .area .tooltip {
+    position: relative;
+    display: inline-block;
+    }
+    
+    .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 350px;
+    background-color: #0A1143;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: -15%;
+    left: 80%;
+    
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 0.5s;
+    }
+    
+    .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 0.8;
+    }
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+    #privateKey:hover #privateKeyTooltip{
+        visibility: visible;
+        opacity: 0.8;
+    }
+
+        
+    </style>
+</head>
+<body class="area">
+
+<div class="context" id="main_title" style="z-index:1"><h3>Generative Art NFT with Lagrange AI and Chainlink Functions by <span style="color: #0A1143; ">Swan Chain</span>
+    <a href="https://www.swanchain.io/" target="_blank">
+    <img style="border:white;margin-left:5px;border-radius: 10px; background-image: linear-gradient(135deg, white, #F1FEF1);" src="https://www.gitbook.com/cdn-cgi/image/width=36,dpr=2,height=36,fit=contain,format=auto/https%3A%2F%2F576435799-files.gitbook.io%2F~%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-MauK7Ig3eWeXC35bZV7%252Ficon%252FUuoj67jxo8XNDYmZKupy%252Flogo_transparent.png%3Falt%3Dmedia%26token%3D8e053c6b-b5b3-4055-86dc-380c9f0a609d" width="60" height="60"/>
+    </a>
+</h3></div>
+    <div id="main" style="margin-bottom:15px">
+
+    <button class="button" id="cleanEnvButton" onclick="cleanEnv()" style="margin:10px">Reset Environment Variable</button>
+    <button class="button" id="cleanButton" onclick="cleanResults()" style="margin:5px; display:none">Clean</button>
+    </div>
+    <form id="envForm" style="z-index: 1;">
+        <div style="display: flex;">
+        <br><label for="lagrangeApiKey" style="color: white">Lagrange API Key:</label>
+        <input style="margin-left: 15px;" type="password" id="lagrangeApiKey" name="lagrangeApiKey"></div><br>
+        
+        <div style="display: flex;">
+        <label for="mcsApiKey" style="color: white">MCS API Key:</label>
+        <input style="margin-left: 51px;" type="password" id="mcsApiKey" name="mcsApiKey"></div><br>
+        
+        <div style="display: flex;">
+        <label for="privateKey" style="color: white">Private Key:</label>
+        <input style="margin-left: 60px;" type="password" id="privateKey" name="privateKey">
+</div>
+        <br>
+
+ 
+
+        <div style="display: flex;">
+        <label for="walletAddress" style="color: white">Wallet Address:</label>
+        <input style="margin-left: 29px;" type="text" id="walletAddress" name="walletAddress"></div><br>
+        
+        <input class="button" type="submit" id="envButton" style="margin-left:58px;" value="Set Environment Variables"><br><br>
+    </form>
+    <div class = "warning" style="display: flex; width: 50%;">
+        <span class="warning-icon">⚠️</span> 
+        This is for development & demonstration purpose only. Never disclose your private key to other people!
+    </div><br>
+    <form id="imageForm" style="display: none;z-index: 1; ">
+        <div style="display: flex;">
+        <br><label for="spaceID" style="color: white">Space UUID:</label>
+        <div class="tooltip"><input style="margin-left: 95px;" type="text" class="tooltip" id="spaceID" name="spaceID" placeholder="3037eb04-9d21-4c72-9724-f986ce68307a" value="3037eb04-9d21-4c72-9724-f986ce68307a"><span class="tooltiptext">UUID of the Lagrange Space hosting the stable diffusion model</span></div></div><br>
+        
+        <div style="display: flex;">
+        <label for="datasetName" style="color: white">Dataset Name:</label>
+        <div class="tooltip"><input style="margin-left: 75px;" type="text" class="tooltip" id="datasetName" name="datasetName"><span class="tooltiptext">Choose a name for the dataset you wish to use for minting and licensing your generative art NFT.</span></div></div><br>
+
+        <!-- <div style="display: flex;">
+        <label for="posTextPrompt" style="color: white">Positive Text Prompt:</label>
+        <div class="tooltip"><input style="margin-left: 28px;" type="text" id="posTextPrompt" name="posTextPrompt"><span class="tooltiptext">Describe how you want to design the image</span></div></div><br>
+
+        <div style="display: flex;">
+        <label for="negTextPrompt" style="color: white">Negative Text Prompt:</label>
+        <div class="tooltip"><input style="margin-left: 21px;" type="text" id="negTextPrompt" name="negTextPrompt"><span class="tooltiptext">Describe what you want to exclude in the image</span></div></div><br> -->
+
+        <input class="button" type="submit" id="generateButton" style="margin-left:38%" value="Generate">
+    </form>
+
+    <div id="loader" class="loader" style="display: none;"></div>
+    <div id="resultContainer" style="z-index:1">
+        <!-- Results will be displayed here -->
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+</ul>
+</body>
+
+</html>
